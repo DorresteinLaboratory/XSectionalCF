@@ -1,0 +1,39 @@
+Logging started at 11:50:13 on 13 Dec 2018
+QIIME version: 1.9.1
+
+qiime_config values:
+pick_otus_reference_seqs_fp	/home/rsilva/miniconda2/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+sc_queue	all.q
+pynast_template_alignment_fp	/home/rsilva/miniconda2/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set_aligned/85_otus.pynast.fasta
+cluster_jobs_fp	start_parallel_jobs.py
+assign_taxonomy_reference_seqs_fp	/home/rsilva/miniconda2/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+torque_queue	friendlyq
+jobs_to_start	1
+denoiser_min_per_core	50
+assign_taxonomy_id_to_taxonomy_fp	/home/rsilva/miniconda2/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/taxonomy/97_otu_taxonomy.txt
+temp_dir	/tmp/
+blastall_fp	blastall
+seconds_to_sleep	1
+
+parameter file values:
+beta_diversity:metrics	bray_curtis
+parallel:jobs_to_start	1
+
+Input file md5 sums:
+feat_table.biom: 44cfa01676d4b096d5949c37ab790277
+mapping_file.txt: d91989e345d4fdbca4f0fb2904be05e1
+
+Executing commands.
+
+# Beta Diversity (bray_curtis) command 
+beta_diversity.py -i feat_table.biom -o bdiv_jk1000/unrarefied_bdiv --metrics bray_curtis
+
+Stdout:
+
+Stderr:
+/home/rsilva/miniconda2/lib/python2.7/site-packages/cogent/maths/distance_transform.py:188: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if rank(datamtx) != 2:
+
+# Rarefaction command 
+multiple_rarefactions_even_depth.py -i feat_table.biom -d 1000 -o bdiv_jk1000/rarefaction/ 
+
