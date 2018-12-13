@@ -1,4 +1,5 @@
-export PATH="/home/rsilva/miniconda2/bin:$PATH"
+# edit your qiime path here
+export PATH="/XXX/miniconda2/bin:$PATH"
 
 biom convert -i feat_table.txt -o feat_table.biom --to-hdf5 --table-type 'Metaboli
 te table'
