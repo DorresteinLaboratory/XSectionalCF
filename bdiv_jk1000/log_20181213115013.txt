@@ -37,3 +37,60 @@ Stderr:
 # Rarefaction command 
 multiple_rarefactions_even_depth.py -i feat_table.biom -d 1000 -o bdiv_jk1000/rarefaction/ 
 
+Stdout:
+
+Stderr:
+
+# UPGMA on full distance matrix: bray_curtis command 
+upgma_cluster.py -i bdiv_jk1000/unrarefied_bdiv/bray_curtis_feat_table.txt -o bdiv_jk1000/unrarefied_bdiv/feat_table_bray_curtis_upgma.tre 
+
+Stdout:
+
+Stderr:
+
+# Beta diversity on rarefied OTU tables (bray_curtis) command 
+beta_diversity.py -i bdiv_jk1000/rarefaction/ -o bdiv_jk1000/bray_curtis//rare_dm/  -m bray_curtis 
+
+Stdout:
+
+Stderr:
+/home/rsilva/miniconda2/lib/python2.7/site-packages/cogent/maths/distance_transform.py:188: VisibleDeprecationWarning: `rank` is deprecated; use the `ndim` attribute or function instead. To find the rank of a matrix see `numpy.linalg.matrix_rank`.
+  if rank(datamtx) != 2:
+
+# UPGMA on rarefied distance matrix (bray_curtis) command 
+upgma_cluster.py -i bdiv_jk1000/bray_curtis//rare_dm/ -o bdiv_jk1000/bray_curtis//rare_upgma/ 
+
+Stdout:
+
+Stderr:
+
+# consensus on rarefied distance matrices (bray_curtis) command 
+consensus_tree.py -i bdiv_jk1000/bray_curtis//rare_upgma/ -o bdiv_jk1000/bray_curtis//rare_upgma_consensus.tre 
+
+Stdout:
+
+Stderr:
+
+# Tree compare (bray_curtis) command 
+tree_compare.py -s bdiv_jk1000/bray_curtis//rare_upgma/ -m bdiv_jk1000/bray_curtis//rare_upgma_consensus.tre -o bdiv_jk1000/bray_curtis//upgma_cmp/ 
+
+Stdout:
+
+Stderr:
+
+# Principal coordinates (bray_curtis) command 
+principal_coordinates.py -i bdiv_jk1000/bray_curtis//rare_dm/ -o bdiv_jk1000/bray_curtis//pcoa/ 
+
+Stdout:
+
+Stderr:
+
+# emperor plots (bray_curtis) command 
+make_emperor.py -i bdiv_jk1000/bray_curtis//pcoa/ -o bdiv_jk1000/bray_curtis//emperor_pcoa_plots/ -m mapping_file.txt 
+
+Stdout:
+
+Stderr:
+
+
+Logging stopped at 22:45:06 on 13 Dec 2018

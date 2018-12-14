@@ -6,6 +6,9 @@ This repository contains:
 1. Example data;
 2. Example R jupyter notebook;
 3. Example qiime code for computation of jackknifed Emperor plots with confidence ellipsoids;
-3. Example outputs.
+4. Example qiime code for PERMANOVA computation;
+5. Example outputs.
+
+
 
 
